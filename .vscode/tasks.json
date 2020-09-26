@@ -7,6 +7,7 @@
             "type": "process",
             "args": [
                 "build",
+                "--framework","netcoreapp3.1",
                 "${workspaceFolder}/reachLocator.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
@@ -19,6 +20,7 @@
             "type": "process",
             "args": [
                 "publish",
+                "--framework","netcoreapp3.1",
                 "${workspaceFolder}/reachLocator.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
@@ -32,6 +34,7 @@
             "args": [
                 "watch",
                 "run",
+                "--framework","netcoreapp3.1",
                 "${workspaceFolder}/reachLocator.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
