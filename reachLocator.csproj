@@ -5,6 +5,10 @@
     <TargetFrameworks>netcoreapp3.1;net45</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-  <PackageReference Include="Tmds.MDns" Version="0.7.0" />
-</ItemGroup>
+    <PackageReference Include="Tmds.MDns" Version="0.7.0" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>
