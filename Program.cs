@@ -51,15 +51,16 @@ namespace ServiceFinder
                 return;
 
             foreach (var addr in service.Addresses)
-                if (addr.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork){
-                    Match m =  service.Txt.Select(txt=>System.Text.RegularExpressions.Regex.Match(txt,@"device=(?<deviceType>.+)")).FirstOrDefault(m=>m.Success);
+                if (addr.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    Match m = service.Txt.Select(txt=>System.Text.RegularExpressions.Regex.Match(txt,@"device=(?<deviceType>.+)")).FirstOrDefault(_=>_.Success);
                     string deviceType = m!= default(Match) && m.Success ? m.Groups["deviceType"].Value : "<Unknown>";
 
                     string msg = $"{service.Instance} ({deviceType}) - http://{addr} on '{service.NetworkInterface.Name}'";
                     if (endpoints.TryAdd(msg,service))
-                     {
-                            Console.WriteLine(msg);
-                     }
+                    {
+                           Console.WriteLine(msg);
+                    }
                 }
 
         }
